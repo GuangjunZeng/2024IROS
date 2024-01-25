@@ -1,0 +1,39 @@
+[System]
+Name='lyzfeedfoward'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=5
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='directionDeviation'
+Range=[1 2.5]
+NumMFs=5
+MF1='MI':'trimf',[0.5 1 1.5]
+MF2='S':'trimf',[1.25 1.5 1.75]
+MF3='M':'trimf',[1.5 1.75 2]
+MF4='L':'trimf',[1.75 2 2.25]
+MF5='MA':'trimf',[2 2.5 3]
+
+[Output1]
+Name='movingDirection'
+Range=[0.5 2]
+NumMFs=5
+MF1='MI':'trimf',[0 0.5 1]
+MF2='S':'trimf',[0.75 1 1.25]
+MF3='M':'trimf',[1 1.25 1.5]
+MF4='L':'trimf',[1.25 1.5 1.75]
+MF5='MA':'trimf',[1.5 2 2.5]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
+4, 4 (1) : 1
+5, 5 (1) : 1
